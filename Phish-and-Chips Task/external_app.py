@@ -2,8 +2,6 @@ import re
 import requests
 from flask import Flask, request, render_template_string
 
-
-
 app = Flask(__name__)
 
 HTML_TEMPLATE = """
@@ -30,6 +28,7 @@ HTML_TEMPLATE = """
 </body>
 </html>
 """
+
 
 @app.route("/")
 def index():
@@ -87,4 +86,4 @@ def demo():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=80)
+    app.run(host="0.0.0.0", port=80)

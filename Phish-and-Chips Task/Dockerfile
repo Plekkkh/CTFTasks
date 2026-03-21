@@ -12,8 +12,8 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 RUN mkdir -p /var/www/html/reports /backup
 RUN chown -R www-data:www-data /var/www/html/reports /backup
 
-RUN echo "* * * * * root cd /var/www/html/reports && tar -cf /backup/reports.tar * >/dev/null 2>&1" >> /etc/crontab
+RUN echo "* * * * * root cd /var/www/html/reports && tar -cf /backup/reports.tar * >/dev/null 2>&1\n" >> /etc/crontab
 
 
 EXPOSE 80
-CMD ["sh", "-c", "echo $CTF_FLAG > /root/flag.txt && chmod 400 /root/flag.txt && /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf"]
+CMD ["sh", "-c", "echo \"$CTF_FLAG\" > /root/flag.txt && chmod 400 /root/flag.txt && /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf"]

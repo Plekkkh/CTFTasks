@@ -4,9 +4,11 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def index():
     return "<h1>Phish Analyzer v2.0 - INTERNAL USE ONLY</h1><p>Send suspicious URLs to /api/v2/analyze?target=&lt;url&gt;</p>"
+
 
 @app.route("/api/v2/analyze")
 def analyze():
