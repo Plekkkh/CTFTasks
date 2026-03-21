@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Customer Portal | PhishGuard{% endblock %}
+
+{% block content %}
+<div class="container mt-5 pt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5 col-lg-4">
+            <div class="card-custom p-5">
+                <div class="text-center mb-4">
+                    <h3 class="fw-bold">Customer Portal</h3>
+                    <p style="color: #8b949e; font-size: 0.9rem">Sign in to your enterprise dashboard</p>
+                </div>
+
+                {% if error %}
+                <div class="alert alert-danger" style="background-color: rgba(248, 81, 73, 0.1);
+                border-color:rgba(248, 81, 73, 0.4); color: #ff7b72; font-size: 0.85rem;">
+                    {{ error }}
+                </div>
+                {% endif %}
+
+                <form method="POST">
+                    <div class="mb-3">
+                        <label class="form-label" style="color: #8b949e; font-size: 0.85rem;">Username</label>
+                        <input type="text" name="username" class="form-control"
+                               style="background-color: #010409; border: 1px solid #30363d; color: #c9d1d9;">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" style="color: #8b949e; font-size: 0.85rem;">Admin Username</label>
+                        <input type="text" name="username" class="form-control"
+                               style="background-color: #010409; border: 1px solid #30363d; color: #c9d1d9;">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label d-flex justify-content-between" style="color: #8b949e; font-size: 0.85rem;">
+                            Password
+                            <a href="#" class="text-decoration-none" style="color: #58a6ff;">Forgot?</a>
+                        </label>
+                        <input type="password" name="password" class="form-control"
+                               style="background-color: #010409; border: 1px solid #30363d; color: #c9d1d9;">
+                    </div>
+                    <button type="submit" class="btn btn-brand w-100 py-2">Secure Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
