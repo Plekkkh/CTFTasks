@@ -30,4 +30,4 @@ RUN echo "* * * * * root cd /var/www/html/reports && tar -cf /backup/reports.tar
 
 
 EXPOSE 8080
-CMD ["sh", "-c", "echo \"$CTF_FLAG\" > /root/flag.txt && chmod 400 /root/flag.txt && /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf"]
+CMD ["sh", "-c", "echo \"$CTF_FLAG\" > /root/flag.txt && chmod 400 /root/flag.txt && unset CTF_FLAG && exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf"]
