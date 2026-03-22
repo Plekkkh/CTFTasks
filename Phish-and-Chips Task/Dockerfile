@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM python:3.12-slim
 
 RUN apt-get update && apt-get install -y python3 python3-pip curl cron supervisor netcat-traditional && rm -rf /var/lib/apt/lists/*
 RUN pip3 install flask requests
