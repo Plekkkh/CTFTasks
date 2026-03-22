@@ -1,0 +1,12 @@
+name: phish-and-chips
+
+services:
+  ctf_task:
+    image: phish_and_chips_task:latest
+    container_name: phish_and_chips_task
+    build: .
+    ports:
+      - "80:8080"
+    env_file:
+      - .env
+    restart: unless-stopped
