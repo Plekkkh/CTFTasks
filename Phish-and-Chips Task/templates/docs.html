@@ -6,32 +6,72 @@
     <div class="row">
         <div class="col-md-3 mb-4">
             <ul class="list-group list-group-flush list-group-custom">
-                <li class="list-group-item list-group-item-custom">Getting Started</li>
-                <li class="list-group-item list-group-item-custom">Authentication (JWT)</li>
-                <li class="list-group-item list-group-item-custom">Endpoints (v1)</li>
-                <li class="list-group-item fw-bold list-group-item-active">Engine v2 (Beta)</li>
+                <li class="list-group-item list-group-item-custom list-group-item-active" onclick="switchTab('started', this)" style="cursor: pointer;">Getting Started</li>
+                <li class="list-group-item list-group-item-custom" onclick="switchTab('auth', this)" style="cursor: pointer;">Authentication (JWT)</li>
+                <li class="list-group-item list-group-item-custom" onclick="switchTab('endpoints', this)" style="cursor: pointer;">Endpoints (v1)</li>
+                <li class="list-group-item list-group-item-custom" onclick="switchTab('v2', this)" style="cursor: pointer;">Engine v2 (Beta)</li>
             </ul>
         </div>
         <div class="col-md-9">
             <div class="card-custom p-5">
-                <h2 class="mb-3">Internal Architecture Note (v2)</h2>
-                <p class="mb-4 text-muted-custom">Last updated: 2 days ago by DevOps Team.</p>
-
-                <div class="alert alert-warning-custom">
-                    <h5 class="alert-heading fw-bold">⚠️ Notice to Developers & QA:</h5>
-                    <p class="mb-0">
-                        The legacy URL scanner (v1) is available via public REST endpoints.<br><br>
-                        The new Advanced Engine (v2) is currently running on <code>127.0.0.1:5000</code> for internal integration tests. 
-                        It is strictly firewalled and <b>must not</b> be exposed to the external network until the security audit is complete!
-                    </p>
+                <div id="content-started" class="tab-content">
+                    <h2 class="mb-3">Getting Started</h2>
+                    <p class="mb-4 text-muted-custom">Welcome to PhishGuard API Documentation.</p>
+                    <p>This documentation covers the public endpoints available for integration.</p>
+                    <p>Our API follows RESTful principles and uses standard HTTP response codes.</p>
                 </div>
-                
-                <h5 class="mt-5 mb-3">Internal Testing Usage</h5>
-                <p class="text-regular">For internal testing, send GET requests to the microservice directly via the internal proxy:</p>
-                <pre class="p-3 rounded code-block"><code>GET /api/v2/analyze?target=[URL] HTTP/1.1
+
+                <div id="content-auth" class="tab-content" style="display: none;">
+                    <h2 class="mb-3">Authentication</h2>
+                    <p class="mb-4 text-muted-custom">Secure Access</p>
+                    <p>All requests must be authenticated using a JWT token.</p>
+                    <pre class="p-3 rounded code-block"><code>Authorization: Bearer &lt;token&gt;</code></pre>
+                </div>
+
+                <div id="content-endpoints" class="tab-content" style="display: none;">
+                    <h2 class="mb-3">Endpoints (v1)</h2>
+                    <p class="mb-4 text-muted-custom">Legacy API</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">GET /api/v1/health</li>
+                        <li class="list-group-item">POST /api/v1/scan</li>
+                    </ul>
+                </div>
+
+                <div id="content-v2" class="tab-content" style="display: none;">
+                    <h2 class="mb-3">Internal Architecture Note (v2)</h2>
+                    <p class="mb-4 text-muted-custom">Last updated: 2 days ago by DevOps Team.</p>
+
+                    <div class="alert alert-warning-custom">
+                        <h5 class="alert-heading fw-bold">⚠️ Notice to Developers & QA:</h5>
+                        <p class="mb-0">
+                            The legacy URL scanner (v1) is available via public REST endpoints.<br><br>
+                            The new Advanced Engine (v2) is currently running on <code>127.0.0.1:5000</code> for internal integration tests.
+                            It is strictly firewalled and <b>must not</b> be exposed to the external network until the security audit is complete!
+                        </p>
+                    </div>
+
+                    <h5 class="mt-5 mb-3">Internal Testing Usage</h5>
+                    <p class="text-regular">For internal testing, send GET requests to the microservice directly via the internal proxy:</p>
+                    <pre class="p-3 rounded code-block"><code>GET /api/v2/analyze?target=[URL] HTTP/1.1
 Host: 127.0.0.1:5000</code></pre>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+function switchTab(tabName, element) {
+    document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+    document.getElementById('content-' + tabName).style.display = 'block';
+
+    document.querySelectorAll('.list-group-item').forEach(el => {
+        el.classList.remove('list-group-item-active');
+        el.classList.remove('active');
+    });
+
+    element.classList.add('list-group-item-active');
+    element.classList.add('active');
+}
+</script>
 {% endblock %}
