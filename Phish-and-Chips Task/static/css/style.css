@@ -1,0 +1,131 @@
+/* Базовые настройки */
+body {
+    background-color: #0d1117;
+    color: #e6edf3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+main {
+    min-height: 80vh;
+}
+
+/* Навигация */
+.navbar {
+    background-color: #010409 !important;
+    border-bottom: 1px solid #30363d;
+    padding: 15px 0;
+}
+.brand-logo {
+    font-weight: 700;
+    color: #2ea043; !important;
+    letter-spacing: 0.5px;
+    font-size: 1.4rem;
+}
+.nav-link {
+    color: #c9d1d9 !important;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.nav-link:hover
+{
+    color: #2ea043 !important;
+}
+
+/* Кнопки */
+.btn-brand {
+    background-color: #238636;
+    color: white;
+    font-weight: 600;
+    border: none;
+}
+.btn-brand:hover {
+    background-color: #2ea043;
+    color: white;
+}
+
+/* Карточки и формы */
+.card-custom {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.form-custom {
+    background-color: #010409;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+}
+.form-custom:focus {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    border-color: #58a6ff;
+    box-shadow: none;
+}
+
+/* Текст */
+.text-muted-custom {
+    color: #8b949e !important;
+}
+.text-brand {
+    color: #2ea043 !important;
+}
+.text-accent {
+    color: #58a6ff !important;
+}
+.text-heading {
+    color: #f0f6fc !important;
+}
+.text-success-custom {
+    color: #3fb950 !important;
+}
+.text-regular {
+    color: #c9d1d9 !important;
+}
+.bg-radial {
+    background: radial-gradient(circle at 50% 0%, #1f2937 0%, #0d1117 70%);
+    border-bottom: 1px solid #30363d;
+    padding: 100px 0;
+}
+
+/* Кастомные алерты */
+.alert-danger-custom {
+    background-color: rgba(248, 81, 73, 0.1);
+    border: 1px solid rgba(248, 81, 73, 0.4);
+    color: #ff7b72;
+}
+.alert-warning-custom {
+    background-color: rgba(210, 153, 34, 0.1);
+    border: 1px solid rgba(210, 153, 34, 0.4);
+    color: #d29922;
+}
+
+/* Списки и код */
+.code-block {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    color: #e6edf3;
+}
+.list-group-custom {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #30363d;
+}
+.list-group-item-custom {
+    background-color: #161b22;
+    color: #c9d1d9;
+    border-bottom: 1px solid #30363d;
+}
+.list-group-item-active {
+    background-color: #1f2937;
+    color: #58a6ff;
+    border-left: 3px solid #58a6ff;
+}
+
+/* Футер */
+.footer {
+    margin-top: auto;
+    padding: 40px 0;
+    border-top: 1px solid #30363d;
+    color: #8b949e;
+    font-size: 0.85rem;
+    text-align: center;
+}

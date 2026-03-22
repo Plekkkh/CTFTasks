@@ -5,19 +5,19 @@
 <div class="container mt-5 pt-4">
     <div class="row">
         <div class="col-md-3 mb-4">
-            <ul class="list-group list-group-flush" style="border-radius: 8px; overflow: hidden; border: 1px solid #30363d;">
-                <li class="list-group-item" style="background-color: #161b22; color: #c9d1d9; border-bottom: 1px solid #30363d;">Getting Started</li>
-                <li class="list-group-item" style="background-color: #161b22; color: #c9d1d9; border-bottom: 1px solid #30363d;">Authentication (JWT)</li>
-                <li class="list-group-item" style="background-color: #161b22; color: #c9d1d9; border-bottom: 1px solid #30363d;">Endpoints (v1)</li>
-                <li class="list-group-item fw-bold" style="background-color: #1f2937; color: #58a6ff; border-left: 3px solid #58a6ff;">Engine v2 (Beta)</li>
+            <ul class="list-group list-group-flush list-group-custom">
+                <li class="list-group-item list-group-item-custom">Getting Started</li>
+                <li class="list-group-item list-group-item-custom">Authentication (JWT)</li>
+                <li class="list-group-item list-group-item-custom">Endpoints (v1)</li>
+                <li class="list-group-item fw-bold list-group-item-active">Engine v2 (Beta)</li>
             </ul>
         </div>
         <div class="col-md-9">
             <div class="card-custom p-5">
                 <h2 class="mb-3">Internal Architecture Note (v2)</h2>
-                <p style="color: #8b949e;" class="mb-4">Last updated: 2 days ago by DevOps Team.</p>
-                
-                <div class="alert" style="background-color: rgba(210, 153, 34, 0.1); border: 1px solid rgba(210, 153, 34, 0.4); color: #d29922;">
+                <p class="mb-4 text-muted-custom">Last updated: 2 days ago by DevOps Team.</p>
+
+                <div class="alert alert-warning-custom">
                     <h5 class="alert-heading fw-bold">⚠️ Notice to Developers & QA:</h5>
                     <p class="mb-0">
                         The legacy URL scanner (v1) is available via public REST endpoints.<br><br>
@@ -27,8 +27,8 @@
                 </div>
                 
                 <h5 class="mt-5 mb-3">Internal Testing Usage</h5>
-                <p style="color: #c9d1d9;">For internal testing, send GET requests to the microservice directly via the internal proxy:</p>
-                <pre class="p-3 rounded" style="background-color: #0d1117; border: 1px solid #30363d; color: #e6edf3;"><code>GET /api/v2/analyze?target=[URL] HTTP/1.1
+                <p class="text-regular">For internal testing, send GET requests to the microservice directly via the internal proxy:</p>
+                <pre class="p-3 rounded code-block"><code>GET /api/v2/analyze?target=[URL] HTTP/1.1
 Host: 127.0.0.1:5000</code></pre>
             </div>
         </div>

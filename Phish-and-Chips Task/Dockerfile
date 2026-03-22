@@ -9,6 +9,9 @@ WORKDIR /app
 COPY external_app.py internal_app.py /app/
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+COPY templates/ /app/templates/
+COPY static/ /app/static/
+
 RUN mkdir -p /var/www/html/reports /backup
 RUN chown -R www-data:www-data /var/www/html/reports /backup
 

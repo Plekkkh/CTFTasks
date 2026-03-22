@@ -7,12 +7,12 @@
         <div class="col-md-8">
             <div class="text-center mb-5">
                 <h2 class="fw-bold">Live URL Analyzer</h2>
-                <p style="color: #8b949e;">Enter a suspicious URL below. Our external relay will fetch the headers safely.</p>
+                <p class="text-muted-custom">Enter a suspicious URL below. Our external relay will fetch the headers safely.</p>
             </div>
             
             <div class="card-custom p-4 mb-4">
                 <form method="POST" class="d-flex">
-                    <input type="text" name="url" class="form-control me-3" style="background-color: #010409; border: 1px solid #30363d; color: #c9d1d9;" placeholder="http://suspicious-domain.com" required>
+                    <input type="text" name="url" class="form-control me-3 form-custom" placeholder="http://suspicious-domain.com" required>
                     <button type="submit" class="btn btn-brand px-4">Analyze</button>
                 </form>
             </div>
@@ -20,12 +20,12 @@
             {% if result %}
                 {% if result.type == 'success' %}
                 <div class="card-custom p-4 border-success">
-                    <h5 class="mb-3" style="color: #3fb950;">{{ result.title }}</h5>
-                    <p style="color: #8b949e; font-size: 0.85rem;">Raw Response Preview:</p>
-                    <pre class="p-3 rounded mb-0" style="background-color: #0d1117; border: 1px solid #30363d; color: #e6edf3; max-height: 400px; overflow-y: auto;"><code>{{ result.body }}</code></pre>
+                    <h5 class="mb-3 text-success-custom">{{ result.title }}</h5>
+                    <p class="text-muted-custom small">Raw Response Preview:</p>
+                    <pre class="p-3 rounded mb-0 code-block" style="max-height: 400px; overflow-y: auto;"><code>{{ result.body }}</code></pre>
                 </div>
                 {% else %}
-                <div class="alert" style="background-color: rgba({{ '248, 81, 73' if result.type == 'danger' else '210, 153, 34' }}, 0.1); border: 1px solid rgba({{ '248, 81, 73' if result.type == 'danger' else '210, 153, 34' }}, 0.4); color: {{ '#ff7b72' if result.type == 'danger' else '#d29922' }};">
+                <div class="alert {{ 'alert-danger-custom' if result.type == 'danger' else 'alert-warning-custom' }}">
                     <h5 class="alert-heading fw-bold">{{ result.title }}</h5>
                     <p class="mb-0">{{ result.body }}</p>
                 </div>
