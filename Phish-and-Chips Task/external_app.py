@@ -47,7 +47,7 @@ def demo():
                 result = {
                     "type": "error",
                     "title": "Analysis Failed",
-                    "body": f"Target is unreachable, timed out, or connection was refused."
+                    "body": "Target is unreachable, timed out, or connection was refused."
                 }
 
     return render_template('demo.html', result=result)
