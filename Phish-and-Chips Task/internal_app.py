@@ -1,5 +1,6 @@
 import os
 import re
+import uuid
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -19,11 +20,17 @@ def analyze():
     if re.search(r"[;|&\n]", target):
         return jsonify({"error": "Security Violation: Invalid characters detected in target URL"}), 403
 
-    cmd = f'curl -sL "{target}" > /tmp/report.html'
+    report_id = uuid.uuid4().hex
+    report_path = f"/var/www/html/reports/{report_id}.html"
 
+    cmd = f'curl -sL "{target}" > {report_path}'
     os.system(cmd)
 
-    return jsonify({"status": "success", "message": "Analysis complete. Report saved internally."})
+    return jsonify({
+        "status": "success",
+        "message": "Analysis complete. Report saved internally.",
+        "report_id": report_id
+    })
 
 
 if __name__ == "__main__":
