@@ -32,7 +32,7 @@
 
 1. Склонируйте репозиторий на свою машину:
    ```bash
-   git clone https://github.com/JeekaMIX/CTFTasks.git
+   git clone https://github.com/Plekkkh/CTFTasks.git
    ```
 2. Перейдите в директорию выбранной задачи (например, `cd CTFTasks/Phish-and-Chips`).
 3. Откройте локальный `README.md` внутри папки для чтения лора и инструкций по запуску.
