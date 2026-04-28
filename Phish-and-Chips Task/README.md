@@ -32,7 +32,7 @@
 
 1. **Склонируйте основной репозиторий и перейдите в папку с задачей:**
    ```bash
-   git clone https://github.com/JeekaMIX/CTFTasks.git
+   git clone https://github.com/Plekkkh/CTFTasks.git
    cd CTFTasks/Phish-and-Chips
    ```
 2. **Настройте флаг (Обязательно):**   
